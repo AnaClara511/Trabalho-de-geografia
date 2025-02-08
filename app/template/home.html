@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        {% if session.get('profile') %}
+        Bem vindo ao nosso sistema,{{session['profile']['given_name']}}
+        {% else %}
+        Bem vindo ao nosso sistema!
+        {% endif %}
+    </h2>
+    <ul>
+        <button>
+            <a href="{{url_for('login')}}">Login</a>
+        </button>
+        <a href="{{url_for('logout')}}">Sair</a>
+    </ul>
+</body>
+</html>
